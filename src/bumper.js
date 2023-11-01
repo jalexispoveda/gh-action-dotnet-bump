@@ -139,7 +139,8 @@ module.exports = async (
   dryRun,
   versionOverride,
   // eslint-disable-next-line sonarjs/cognitive-complexity
-  releaseCommitMessageRegex) => {  
+  releaseCommitMessageRegex,
+  repoDomain) => {  
   
   isDryRun = dryRun;
 
@@ -206,7 +207,7 @@ module.exports = async (
       logInfo(`Current branch: ${currentBranch}`);
     }
 
-    await commitChanges(newVersion, skipCommit, skipTag, skipPush, commitMessageToUse);
+    await commitChanges(newVersion, skipCommit, skipTag, skipPush, commitMessageToUse, repoDomain);
     logInfo('Changes committed');
   }
 

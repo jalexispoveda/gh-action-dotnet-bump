@@ -21,6 +21,7 @@ const { exitSuccess, logError, exitFailure } = require('./utils');
     const type = core.getInput('type');
     const dryRun = core.getInput('dry-run') > '' ? core.getBooleanInput('dry-run') : false;
     const versionOverride = core.getInput('version-override');
+    const repoDomain = core.getInput('repository-domain');
     const wasBumped = await bumpVersion(tagPrefix,
       minorWording,
       majorWording,
@@ -37,7 +38,8 @@ const { exitSuccess, logError, exitFailure } = require('./utils');
       type,
       dryRun,
       versionOverride,
-      releaseCommitMessageRegex || commitMessageToUse);
+      releaseCommitMessageRegex || commitMessageToUse,
+      repoDomain);
     if (wasBumped) {
       core.setOutput('wasBumped', wasBumped);
       exitSuccess('Version bumped!');
