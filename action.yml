@@ -1,6 +1,6 @@
 ---
-name: Automated Version Bump for .NET libraries
-author: 'Jeff Jones'
+name: Version Bump for .NET libraries
+author: 'Jonas Lagoni'
 description: Automated version bump for .NET libraries to follow Semantic Versioning.
 branding:
   icon: 'chevrons-up'
