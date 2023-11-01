@@ -91,6 +91,10 @@ inputs:
     description: 'Allows running the action without modifying the file and committing changes.'
     default: false
     required: false
+  repository-domain:
+    description: 'In case your repo is in a private domain.'
+    default: 'github.com'
+    required: false
 
 outputs:
   wasBumped:
